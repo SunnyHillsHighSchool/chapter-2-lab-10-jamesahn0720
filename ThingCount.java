@@ -10,39 +10,45 @@ public class ThingCount implements Comparable
  
  public ThingCount()
  {
+ count = 0;
+   thing = null;
  }
  
- public ThingCount(Object thang, int cnt)
+ public ThingCount(Object obj, int cnt)
  {
+  count = cnt;
+   thing = obj;
  }
  
  public int getCount()
  {
-  return 0;
+  return count;
  }
  
  public void setCount(int cnt)
  {
+ count = cnt;
  }
 
  public void setThing(Object obj)
  {
+ thing = obj;
  } 
  
  public Object getThing()
  {
-  return null;
+  return thing;
  }
  
- public boolean equals(Object obj)
+ public boolean equals(ThingCount obj)
  {
-  ThingCount other = (ThingCount)obj;
+  if(this.getThing().equals(obj.getThing()) && this.getCount()==obj.getCount())
+    return true;
   return false;
  }
  
  public int compareTo(Object obj)
  {
-  ThingCount other = (ThingCount)obj;
   return -1;  
  }
  
